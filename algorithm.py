@@ -1,7 +1,7 @@
-# 백준 10807
+# 백준 5597
+s = [i for i in range(1, 31)]
 
-N = input()
-s = input().split(' ')
-v = input()
-
-print(s.count(v))
+for i in range(28):
+    s.remove(int(input()))
+print(s[0])
+print(s[1])
