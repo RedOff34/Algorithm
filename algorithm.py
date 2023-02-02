@@ -1,16 +1,16 @@
-# 백준 1065
+# 백준 1157
 X = input()
-
-count = 0
-
-if len(X) <= 2:
-    count = X
-    
-elif len(X) >= 3:
-    count += 99
-    for i in range(100, int(X)+1):
-        a = int(str(i)[0]) - int(str(i)[1])
-        b = int(str(i)[1]) - int(str(i)[2])
-        if a == b:
-            count +=1
-print(count)
+c = [0 for i in range(26)]
+for i in range(len(X)):
+    if 90 < ord(X[i]):
+        a = ord(X[i])-32
+        c[a-65] += 1
+    else:
+        a = ord(X[i])
+        c[a-65] += 1
+a = c.index(max(c))
+c.sort()
+if c[24] == c[25]:
+    print('?')
+else:
+    print(chr(65+a))
